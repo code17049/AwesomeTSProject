@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Alert, Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Botones } from '../components/Botones';
 
 export const Contador = () => {
     const [contador, setContador] = useState(0);
@@ -14,11 +15,17 @@ export const Contador = () => {
         onPress={() => setContador(contador + 1)}
       />
 
-      <TouchableOpacity style={styles.flotanteUbicacion} onPress={() => setContador(contador + 1)}>
+      <Botones
+        titulo='-'
+        position='L'
+        onPress={() => setContador(contador + 1)}
+      />
+
+      {/* <TouchableOpacity style={styles.flotanteUbicacion} onPress={() => setContador(contador + 1)}>
         <View style={styles.flotanteView}>
           <Text style={styles.flotanteText}>+</Text>
         </View>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   )
 }
@@ -28,22 +35,6 @@ const styles = StyleSheet.create({
     flex:1,
     justifyContent: 'center',
   },
-  flotanteUbicacion: {
-    position: 'absolute',
-    bottom: 25,
-    right: 25
-  },
-  flotanteView: {
-    width: 70,
-    height: 70,
-    backgroundColor: '#0B0A0A',
-    justifyContent: 'center',
-    borderRadius: 100
-  },
-  flotanteText: {
-    color: 'white',
-    alignSelf: 'center',
-    fontSize: 25
-  }
+  
 
 });
