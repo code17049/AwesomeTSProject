@@ -16,7 +16,7 @@ export const Contador = () => {
       />
 
       <Botones
-        titulo='-'
+        titulo='+'
         position='L'
         onPress={() => setContador(contador + 1)}
       />
