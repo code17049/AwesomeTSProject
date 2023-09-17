@@ -4,15 +4,13 @@ import {Dimensions} from 'react-native';
 
 export const Estilos = () => {
     const {width, height} = Dimensions.get('window');
-  return (
-    <View style={style.container}>
-        <Text style={style.caja1}>{width}</Text>
-        <Text style={style.caja2}>{height}</Text>
-        <Text style={style.caja3}></Text>
-
-     
-    </View>
-  )
+    return (
+        <View style={style.container}>
+            <Text style={style.caja1}>{width}</Text>
+            <Text style={style.caja2}>{height}</Text>
+            <Text style={style.caja3}></Text>
+        </View>
+    )
 }
 
 const style = StyleSheet.create({
