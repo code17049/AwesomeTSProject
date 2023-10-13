@@ -95,7 +95,7 @@ export const Calculadora = () => {
             }else(
                 setNumero(numero + numeroTexto)
             )
-
+        
           // No es necesario Pero no esta demas acegurarnos xD de que el
           // if devuelva algo xD  
         }else(
