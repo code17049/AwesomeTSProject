@@ -5,11 +5,18 @@ import { PaginaUno } from '../screens/PaginaUno';
 import { PaginaDos } from '../screens/PaginaDos';
 import { PaginaTres } from '../screens/PaginaTres';
 
-const Stack = createStackNavigator();
+export type RootStackParams = {
+  PaginaUno: undefined,
+  PaginaDos: {id: number, nombre: string},
+  PaginaTres: undefined
+}
+
+const Stack = createStackNavigator<RootStackParams>();
+
 export const StackNavigation = () => {
     return (
         <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName="PaginaUno"
       screenOptions={{
         headerMode: 'screen',
         headerTintColor: 'white',

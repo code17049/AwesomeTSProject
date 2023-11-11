@@ -1,5 +1,6 @@
 import React from 'react'
 import { Text, View } from 'react-native'
+import { MyTabs } from '../navigation/MyTabs'
 
 export const HolaMundoScreen = () => {
   return (
@@ -12,6 +13,7 @@ export const HolaMundoScreen = () => {
           fontSize: 40,
           textAlign: 'center'
         }}>Suscribanse</Text>
+
       </View>
-  )
+  ) 
 }

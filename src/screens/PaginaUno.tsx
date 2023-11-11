@@ -10,7 +10,10 @@ export const PaginaUno = ({navigation}: Props) => {
     <View>
         <Button
         title='Go to Page 2'
-        onPress={()=>navigation.navigate('PaginaDos')}
+        onPress={()=>navigation.navigate('PaginaDos', {
+          id: 1,
+          nombre: 'Virtuals Me gusta'
+        })}
         />
     </View>
   )
