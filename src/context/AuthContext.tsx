@@ -1,4 +1,5 @@
-import { createContext } from "react"
+import { createContext, useReducer } from "react"
+import { authReducer } from "./authReducer";
 
 // Que informacion deseo exponer
 export interface AuthState {
@@ -25,11 +26,15 @@ export const AuthContext = createContext({} as AuthContextProps );
 
 // Componete que provee el estado
 export const AuthProvider = ({children}: any) => {
+    const [authState, dispatch] = useReducer(authReducer, authInicialState)
+    const singIn = () => {
+        dispatch({type: "singIn"})
+    }
     return (
         <AuthContext.Provider
             value={{
-                authState: authInicialState,
-                singIn: () => {}
+                authState,
+                singIn
             }}
         >
             {children}

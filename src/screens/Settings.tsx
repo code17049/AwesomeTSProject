@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Text, View } from 'react-native'
+import { AuthContext } from '../context/AuthContext'
 
 export const Settings = () => {
+  const context = useContext(AuthContext)
   return (
     <View style={{
       flex:1,
-      justifyContent: 'center',
+      //justifyContent: 'center',
       backgroundColor: 'white'
     }} >
       <Text style={{
-        fontSize: 40,
-        textAlign: 'center'
-      }}>Setting</Text>
+        fontSize: 20,
+        //textAlign: 'center'
+      }}>{JSON.stringify(context, null, 4)}</Text>
 
     </View>
   )
