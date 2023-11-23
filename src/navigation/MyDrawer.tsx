@@ -7,6 +7,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import {estilos} from '../themes/Styles'
 import { Settings } from '../screens/Settings';
 import { MyTabs } from './MyTabs';
+import { PaginaUno } from '../screens/PaginaUno';
 
 const Drawer = createDrawerNavigator();
 export const MyDrawer = () => {
@@ -52,7 +53,6 @@ const MenuInterno = ({navigation}: DrawerContentComponentProps) => {
       >
           <Text style={estilos.stiloTexto}>Botton Tabs</Text>
         </TouchableOpacity>
-
         <TouchableOpacity style={{
         marginVertical: 10,
       }}
@@ -60,6 +60,7 @@ const MenuInterno = ({navigation}: DrawerContentComponentProps) => {
       >
           <Text style={estilos.stiloTexto}>Settings</Text>
         </TouchableOpacity>
+
       </View>
     </DrawerContentScrollView>
   );

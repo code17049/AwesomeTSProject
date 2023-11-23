@@ -12,13 +12,14 @@ export interface AuthState {
 export const authInicialState: AuthState = {
     isLogig: false,
     useName: 'Suscribanse',
-    favoriteIcon: 'MeGustaAlVideo'
+    favoriteIcon: undefined
 }
 
 // Aqui se define lo que se mostrara
 export interface AuthContextProps {
     authState: AuthState,
     singIn: () => void,
+    changeFavoriteIcon: (iconName: string) => void;
 }
 
 // Crear contexto 
@@ -30,11 +31,17 @@ export const AuthProvider = ({children}: any) => {
     const singIn = () => {
         dispatch({type: "singIn"})
     }
+
+    const changeFavoriteIcon = (iconName: string) => {
+        dispatch({type: "cambiarIconoFavorito", payload: iconName})
+    }
+
     return (
         <AuthContext.Provider
             value={{
                 authState,
-                singIn
+                singIn,
+                changeFavoriteIcon
             }}
         >
             {children}
