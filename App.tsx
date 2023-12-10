@@ -13,16 +13,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import { StackNavigation } from './src/navigation/StackNavigation';
 import { MyDrawer } from './src/navigation/MyDrawer';
 import { AuthProvider } from './src/context/AuthContext';
+import { NavigationMovies } from './src/navigation/NavigationMovies';
 
 
 export const App = () => {
   return(
     
     <NavigationContainer>
-      <AppState>
-        {/* <StackNavigation/> */}
+      <NavigationMovies/>
+      {/* <AppState>
         <MyDrawer/>
-      </AppState>
+      </AppState> */}
       
     </NavigationContainer>
   );

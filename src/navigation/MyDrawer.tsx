@@ -8,6 +8,7 @@ import {estilos} from '../themes/Styles'
 import { Settings } from '../screens/Settings';
 import { MyTabs } from './MyTabs';
 import { PaginaUno } from '../screens/PaginaUno';
+import { StackNavigation } from './StackNavigation';
 
 const Drawer = createDrawerNavigator();
 export const MyDrawer = () => {
@@ -17,6 +18,7 @@ export const MyDrawer = () => {
         >
           <Drawer.Screen name="MyTabs" component={MyTabs} />
           <Drawer.Screen name="Settings" component={Settings} />
+          <Drawer.Screen name="StackNavigation" component={StackNavigation} />
         </Drawer.Navigator>
       );
 }
@@ -53,12 +55,20 @@ const MenuInterno = ({navigation}: DrawerContentComponentProps) => {
       >
           <Text style={estilos.stiloTexto}>Botton Tabs</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={{
+      <TouchableOpacity style={{
         marginVertical: 10,
       }}
       onPress={()=>navigation.navigate('Settings')}
       >
           <Text style={estilos.stiloTexto}>Settings</Text>
+        </TouchableOpacity>
+
+      <TouchableOpacity style={{
+        marginVertical: 10,
+      }}
+      onPress={()=>navigation.navigate('StackNavigation')}
+      >
+          <Text style={estilos.stiloTexto}>StackNavigation</Text>
         </TouchableOpacity>
 
       </View>

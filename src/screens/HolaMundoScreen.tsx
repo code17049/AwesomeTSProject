@@ -5,7 +5,7 @@ import { AuthContext } from '../context/AuthContext'
 import { BotonIcon } from '../components/BotonIcon';
 
 export const HolaMundoScreen = () => {
-  const {singIn, authState} = useContext(AuthContext)
+  const {singIn, authState, logOut} = useContext(AuthContext)
   return (
     <View style={{
         flex:1,
@@ -13,11 +13,15 @@ export const HolaMundoScreen = () => {
         backgroundColor: 'white'
       }} >
         <Text style={{
-          fontSize: 40,
+          fontSize: 40, 
           textAlign: 'center'
         }}>Suscribanse</Text>
         {
           !authState.isLogig ? <Button title='singIn' onPress={()=>singIn()}/> : null
+        }
+
+        {
+          authState.isLogig ? <Button title='logOut' onPress={()=>logOut()}/> : null
         }
         
         <View style={{

@@ -12,7 +12,7 @@ export const PaginaUno = ({navigation}: Props) => {
         title='Go to Page 2'
         onPress={()=>navigation.navigate('PaginaDos', {
           id: 1,
-          nombre: 'Virtuals Me gusta'
+          nombre: 'Virtuals'
         })}
         />
     </View>

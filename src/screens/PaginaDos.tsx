@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { View, Text, Button } from 'react-native'
 import {StackScreenProps} from '@react-navigation/stack'
 import { RootStackParams } from '../navigation/StackNavigation';
+import { AuthContext } from '../context/AuthContext';
 
 interface Props extends StackScreenProps<RootStackParams,'PaginaDos'>{};
 
@@ -13,10 +14,12 @@ interface Props extends StackScreenProps<RootStackParams,'PaginaDos'>{};
 export const PaginaDos = ({navigation, route}:Props) => {
   /* const params = route.params as Parametros; */
   const params = route.params ;
+  const {changeUserName} = useContext(AuthContext)
   useEffect(() => {
     navigation.setOptions({
       title: params.nombre
-    })
+    }),
+    changeUserName(params.nombre);
   }, [])
   
   return (

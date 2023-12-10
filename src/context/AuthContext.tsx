@@ -11,7 +11,7 @@ export interface AuthState {
 // Estado inicial
 export const authInicialState: AuthState = {
     isLogig: false,
-    useName: 'Suscribanse',
+    useName: undefined,
     favoriteIcon: undefined
 }
 
@@ -19,7 +19,9 @@ export const authInicialState: AuthState = {
 export interface AuthContextProps {
     authState: AuthState,
     singIn: () => void,
+    logOut: () => void,
     changeFavoriteIcon: (iconName: string) => void;
+    changeUserName: (iconName: string) => void;
 }
 
 // Crear contexto 
@@ -32,8 +34,16 @@ export const AuthProvider = ({children}: any) => {
         dispatch({type: "singIn"})
     }
 
+    const logOut = () => {
+        dispatch({type: "logOut"})
+    }
+
     const changeFavoriteIcon = (iconName: string) => {
         dispatch({type: "cambiarIconoFavorito", payload: iconName})
+    }
+
+    const changeUserName = (userName: string) => {
+        dispatch({type: "changeUseName", payload: userName})
     }
 
     return (
@@ -41,7 +51,9 @@ export const AuthProvider = ({children}: any) => {
             value={{
                 authState,
                 singIn,
-                changeFavoriteIcon
+                changeFavoriteIcon,
+                changeUserName,
+                logOut
             }}
         >
             {children}
